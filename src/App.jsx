@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import Home from "./pages/Home"
-import About from "./pages/About"
+import React from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
 
-function App() {
+
+const App = () => {
   return (
     <BrowserRouter>
+    <div className="page--wrapper">
       <header>
         <Link className="site-logo" to="/">#VanLife</Link>
         <nav>
@@ -17,10 +18,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
+    </div>
     </BrowserRouter>
   )
 }
 
-ReactDOM
-  .createRoot(document.getElementById('root'))
-  .render(<App />);
+export default App;
